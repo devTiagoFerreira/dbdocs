@@ -1,0 +1,37 @@
+project Usuarios {
+  database_type: 'MSSQL'
+  note: '''
+    # Exemplo de Banco de Dados
+  '''
+}
+table usuario [headercolor: #403079] {
+  id  int [pk, increment]
+  cpf varchar(max) [not null]
+  nome varchar(max) [not null]
+  dataNascimento timestamp [not null]
+  logradouro varchar(max) [not null]
+  numero varchar(max) [not null]
+  cidade int [not null, ref: > cidade.id]
+  dataCadastro timestamp [not null, default: `now()`]
+  apagado boolean
+  note: "Tabela referente aos dados pessoais do usuário."
+}
+
+table cidade {
+  id int [pk, increment]
+  nome varchar(max)
+  estado int [not null, ref: > estado.id]
+  pais int [not null]
+}
+
+table estado {
+  id int [pk, increment]
+  nome varchar(max) [not null]
+  sigla char(2) [not null]
+  pais int [not null, ref: > pais.id]
+}
+
+table pais {
+  id int [pk, increment]
+  nome varchar(max) [not null]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "dbdocs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dbdocs": "^0.7.3"
+  },
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.4.0"
+  }
+}
